@@ -1,0 +1,2 @@
+com/hjw/basicscodelab/BuildConfig.java
+ com.hjw.basicscodelab.BuildConfig
