@@ -3,6 +3,8 @@ package com.hjw.app.jetpackcomposebasics
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -34,8 +36,23 @@ private fun MyApp() {
 
 @Composable
 fun Greeting(name: String) {
-    Surface(color = MaterialTheme.colors.primary) {
-        Text(text = "Hello $name!", modifier = Modifier.padding(24.dp))
+    Surface(
+        color = MaterialTheme.colors.primary,
+        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+    ) {
+        Column(modifier = Modifier.fillMaxWidth().padding(24.dp)) {
+            Text(text = "Hello!")
+            Text(text = name)
+        }
+    }
+}
+
+@Composable
+fun MyApp(names: List<String> = listOf("World", "Compose")) {
+    Column {
+        for (name in names) {
+            Greeting(name = name)
+        }
     }
 }
 
@@ -43,6 +60,7 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     JetpackComposeBasicsTheme {
-        Greeting("Android")
+        //Greeting("Android")
+        MyApp(names = listOf("Android", "Compose"))
     }
 }
