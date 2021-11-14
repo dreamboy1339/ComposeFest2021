@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -33,10 +34,29 @@ class MainActivity : ComponentActivity() {
             LayoutsInJetpackComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    PhotographerCard()
+                    //PhotographerCard()
+                    LayoutsCodelab()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun LayoutsCodelab() {
+    Scaffold { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            Text(text = "Hi there!")
+            Text(text = "Thanks for going through the Layouts codelab")
+        }
+    }
+}
+
+@Preview
+@Composable
+fun LayoutsCodelabPreview() {
+    LayoutsInJetpackComposeTheme {
+        LayoutsCodelab()
     }
 }
 
@@ -70,10 +90,10 @@ fun PhotographerCard(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
-@Composable
-fun PhotographerCardPreview() {
-    LayoutsInJetpackComposeTheme {
-        PhotographerCard()
-    }
-}
+//@Preview
+//@Composable
+//fun PhotographerCardPreview() {
+//    LayoutsInJetpackComposeTheme {
+//        PhotographerCard()
+//    }
+//}
