@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
             LayoutsInJetpackComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    PhotographerCard()
                 }
             }
         }
@@ -38,24 +38,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    LayoutsInJetpackComposeTheme {
-        Greeting("Android")
-    }
-}
-
-@Composable
 fun PhotographerCard(modifier: Modifier = Modifier) {
     Row(
         modifier
-            .padding(16.dp)
             .clickable(onClick = { /* Ignoring onClick */ })
+            .padding(16.dp)
     ) {
         Surface(
             modifier = Modifier.size(50.dp),
